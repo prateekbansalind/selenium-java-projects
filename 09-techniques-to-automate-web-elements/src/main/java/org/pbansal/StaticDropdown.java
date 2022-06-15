@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class Main {
+public class StaticDropdown {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -19,12 +19,12 @@ public class Main {
 
         // Handling Static Dropdowns - can be identified with select tag.
         driver.findElement(By.xpath("//span[normalize-space()='Hotels']")).click();
-        Select chooseOptionStaticDropdown = new Select(driver.findElement(By.id("ddl_Adult_MST"))); // select class can be used to capture static dropdown.
-        chooseOptionStaticDropdown.selectByValue("1"); //value starts with 1
+        Select StaticDropdownField = new Select(driver.findElement(By.id("ddl_Adult_MST"))); // select class can be used to capture static dropdown.
+        StaticDropdownField.selectByValue("1"); //value starts with 1
         Thread.sleep(2000);
-        chooseOptionStaticDropdown.selectByIndex(4); // index as usaual starts with 0
+        StaticDropdownField.selectByIndex(4); // index as usaual starts with 0
         Thread.sleep(2000);
-        chooseOptionStaticDropdown.selectByVisibleText("7");
+        StaticDropdownField.selectByVisibleText("7");
         Thread.sleep(5000);
         driver.close();
 
